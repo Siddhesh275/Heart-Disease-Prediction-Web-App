@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html>
+
+  <h1>
+    Heart Disease Predictor
+  </h1>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+  <div class="container">
+    <form action="{{ url_for('predict')}}" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..">
+
+      <label for="age">Age</label>
+      <input type="text" id="age" name="age" placeholder="Your age..">
+
+      <label for="sex">Sex</label>
+      <select id="sex" name="sex">
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+      </select>
+
+      <label for="cp">Chest Pain Type</label>
+      <select id="cp" name="cp">
+        <option value="1">Typical Angina</option>
+        <option value="2">Atypical Angina</option>
+        <option value="3">Non-anginal Pain</option>
+        <option value="4">Asymtomatic</option>
+      </select>
+
+      <label for="trestbps">Resting Blood Pressure</label>
+      <input type="text" id="trestbps" name="trestbps" placeholder="A number in range [94, 200]">
+
+      <label for="chol">Serum Cholestrol</label>
+      <input type="text" id="chol" name="chol" placeholder="A number in range [126, 564]">
+
+      <label for="fbs">Fasting Blood Sugar</label>
+      <select id="fbs" name="fbs">
+        <option value="1">Greater than 120 mg/dl</option>
+        <option value="0">Less than 120 mg/dl</option>
+      </select>
+
+      <label for="restecg">Resting ECG Results</label>
+      <select id="restecg" name="restecg">
+        <option value="0">Normal</option>
+        <option value="1">Having ST-T wave abnormality</option>
+      </select>
+
+      <label for="thalach">Max Heart Rate Achieved</label>
+      <input type="text" id="thalach" name="thalach" placeholder="A number in range [71, 202]">
+      
+      <label for="exang">Exercise-induced Angina</label>
+      <select id="exang" name="exang">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+      
+      <label for="oldpeak">ST depression induced by exercise relative to rest</label>
+      <input type="text" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0, 6.2]">
+      
+      <label for="slope">Slope of the peak exercise ST segment</label>
+      <input type="text" id="slope" name="slope" placeholder="Typically in [1, 3]">
+      
+      <label for="ca">Number of Major vessels</label>
+      <input type="text" id="ca" name="ca" placeholder="Typically in [0, 3]">
+      
+      <label for="thal">thal</label>
+      <select id="thal" name="thal">
+        <option value="3">Normal</option>
+        <option value="6">Fixed Defect</option>
+        <option value="7">Reversible Defect</option>
+      </select>
+
+      <input type="submit" value="Predict">
+
+    </form>
+  </div>
+  </html>
